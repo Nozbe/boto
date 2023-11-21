@@ -36,6 +36,8 @@ except ImportError:
 
 import sys
 
+from boto import __version__
+
 if sys.version_info <= (2, 5):
     error = "ERROR: boto requires Python Version 2.6 or above...exiting."
     print(error, file=sys.stderr)
@@ -49,7 +51,7 @@ def readme():
 
 setup(
     name="boto",
-    version="10.0",
+    version=__version__,
     description="Amazon Web Services Library",
     long_description=readme(),
     install_requires=["six"],
